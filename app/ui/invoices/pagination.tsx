@@ -18,17 +18,17 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
     return `${pathname}?${params.toString()}`;
   };
 
-  // const allPages = generatePagination(currentPage, totalPages);
+  const allPages = generatePagination(currentPages, totalPages);
 
   return (
     <>
       {/*  NOTE: Uncomment this code in Chapter 11 */}
 
-      {/* <div className="inline-flex">
+       <div className="inline-flex">
         <PaginationArrow
           direction="left"
-          href={createPageURL(currentPage - 1)}
-          isDisabled={currentPage <= 1}
+          href={createPageURL(currentPages - 1)}
+          isDisabled={currentPages <= 1}
         />
 
         <div className="flex -space-x-px">
@@ -46,7 +46,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
                 href={createPageURL(page)}
                 page={page}
                 position={position}
-                isActive={currentPage === page}
+                isActive={currentPages === page}
               />
             );
           })}
@@ -54,10 +54,10 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
 
         <PaginationArrow
           direction="right"
-          href={createPageURL(currentPage + 1)}
-          isDisabled={currentPage >= totalPages}
+          href={createPageURL(currentPages + 1)}
+          isDisabled={currentPages >= totalPages}
         />
-      </div> */}
+      </div> 
     </>
   );
 }
